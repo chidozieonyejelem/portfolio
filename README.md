@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# chidozieportfolio
 
-## Getting Started
+A single-page developer portfolio and link-in-bio hub — black & white, quiet, fast. Built with Next.js (App Router) and Tailwind CSS v4, deploying to Vercel.
 
-First, run the development server:
+## Live
+
+https://chidozieportfolio.vercel.app <!-- update after deploy -->
+
+## Tech stack
+
+- **Next.js 16** (App Router, React 19) — JavaScript, no TypeScript
+- **Tailwind CSS v4** (CSS-first `@theme`, no config file)
+- **next/font** (Inter + JetBrains Mono, self-hosted)
+- **lucide-react** (icons)
+- **next/og** (dynamic Open Graph / Twitter image)
+- **@vercel/analytics**
+- **pnpm** + **ESLint**
+
+## Quickstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
+# open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Updating content
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Everything lives in **`lib/content.js`** — the single source of truth for all text, links, and projects. Edit that one file to update the site.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Drop your photo at `public/avatar.jpg` (square, min 200×200).
+- Drop your CV at `public/resume.pdf`.
 
-## Learn More
+## GitHub token (optional)
 
-To learn more about Next.js, take a look at the following resources:
+The Repositories section pulls public repos from the GitHub API. Without a token you get 60 requests/hour; with one, 5000/hour.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a fine-grained PAT at https://github.com/settings/tokens?type=beta with public-repo read access.
+2. Add it to `.env.local`: `GITHUB_TOKEN=...`
+3. Add the same variable to your Vercel project's environment variables.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The section fails gracefully (shows an empty state) if the API is unreachable, so the build never breaks.
 
-## Deploy on Vercel
+## Build & deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm build   # production build
+pnpm lint    # eslint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy via the `vercel` CLI or by importing the repo on vercel.com. Remember to set `GITHUB_TOKEN` in the Vercel dashboard.
+
+## Build spec
+
+See [`MASTER_PROMPT.md`](./MASTER_PROMPT.md) for the full design + build specification this project was generated from.
