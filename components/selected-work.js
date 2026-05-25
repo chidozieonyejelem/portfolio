@@ -4,12 +4,9 @@ import { selectedWork } from "@/lib/content";
 
 export function SelectedWork() {
   return (
-    <section
-      id="work"
-      className="flex flex-col items-center py-[clamp(48px,8vw,96px)] text-center"
-    >
+    <section id="work" className="py-[clamp(48px,8vw,96px)]">
       <SectionHeader label="My Work" />
-      <div className="w-full border-b-[0.5px] border-[#e5e5e5]">
+      <div className="border-b-[0.5px] border-[#e5e5e5]">
         {selectedWork.map((work) => (
           <WorkRow
             key={work.num}
