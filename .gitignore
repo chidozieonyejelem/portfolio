@@ -37,6 +37,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local-only docs (kept for reference, not committed)
+/README.md
+/MASTER_PROMPT.md
+/AGENTS.md
+/CLAUDE.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
