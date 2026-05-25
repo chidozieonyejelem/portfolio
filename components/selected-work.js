@@ -6,7 +6,7 @@ export function SelectedWork() {
   const total = String(selectedWork.length).padStart(2, "0");
   return (
     <section id="work" className="py-[clamp(48px,8vw,96px)]">
-      <SectionHeader label="Selected Work" right={`${total} / ${total}`} />
+      <SectionHeader label="My Work" right={`${total} / ${total}`} />
       <div className="border-b-[0.5px] border-[#e5e5e5]">
         {selectedWork.map((work) => (
           <WorkRow
@@ -16,6 +16,7 @@ export function SelectedWork() {
             description={work.description}
             year={work.year}
             href={work.href}
+            external={work.external}
           />
         ))}
       </div>

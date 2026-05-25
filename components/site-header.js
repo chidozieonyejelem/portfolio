@@ -2,9 +2,8 @@ import { site } from "@/lib/content";
 
 const navLinks = [
   { label: "work", href: "#work" },
-  { label: "repos", href: "#repos" },
+  { label: "stack", href: "#stack" },
   { label: "about", href: "#about" },
-  { label: "contact", href: "#contact" },
 ];
 
 export function SiteHeader() {

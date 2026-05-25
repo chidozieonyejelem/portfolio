@@ -9,6 +9,22 @@ personal portfolio + link-in-bio hub for Chidozie, deploying to the Vercel free 
 > A couple of other deviations were made to match **Next.js 16** conventions and are
 > called out inline.
 
+## Changes since initial build
+
+The sections below describe the original spec. The live site has since diverged:
+
+- **Hero** is centered; the avatar is large (~500px, responsive); the headline is
+  three lines — name / field of study / role (`Chidozie Onyejelem` / `Computer Science`
+  / `Student`). The "Open to opportunities" status pill was removed.
+- **"Selected Work" renamed to "My Work"**, populated with real projects.
+- **Repositories section removed.** The live GitHub API fetch (`lib/github.js`), the
+  `github` config object, the `GITHUB_TOKEN` env var, and `.env.example`/`.env.local`
+  are all gone. In its place is a static **Tech Stack** section driven by `techStack`
+  in `lib/content.js`. The site now needs **no environment variables**.
+- **Contact ("Get in touch") section removed** — all links live in the hero.
+- **About** no longer repeats the stack inline (it has its own section now).
+- Social links: order is LinkedIn → GitHub → Email → CV; all point to real URLs.
+
 ## 0. Stack
 
 - **Next.js 16** (App Router, React 19) — **JavaScript** (the original spec said
