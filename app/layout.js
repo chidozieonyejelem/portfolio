@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
-const title = "Chidozie Onyejelem Portfolio";
+const title = "Chidozie Portfolio";
 
 export const metadata = {
   metadataBase: new URL(site.url),
