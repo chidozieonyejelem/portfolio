@@ -18,7 +18,7 @@ https://chidozieportfolio.vercel.app
 
 ## Sections
 
-A single page: hero (avatar, name, links), **My Work**, **Tech Stack**, **About** — plus `/uses` and `/now` placeholder pages.
+A single page: hero (avatar, name, links), **My Work**, **Tech Stack**, and **About**.
 
 ## Quickstart
 

@@ -24,6 +24,9 @@ The sections below describe the original spec. The live site has since diverged:
 - **Contact ("Get in touch") section removed** — all links live in the hero.
 - **About** no longer repeats the stack inline (it has its own section now).
 - Social links: order is LinkedIn → GitHub → Email → CV; all point to real URLs.
+- **Cleanup:** removed the `/uses` and `/now` placeholder pages, the unused `cn()`
+  helper (`lib/utils.js`) and its `clsx`/`tailwind-merge` deps, the unused `site.name`
+  field, and all remaining placeholder text. The site uses no environment variables.
 
 ## 0. Stack
 
