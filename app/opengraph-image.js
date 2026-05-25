@@ -43,8 +43,13 @@ export default function OpengraphImage() {
           >
             {site.fullName}
           </div>
-          <div style={{ fontSize: 40, color: "#a1a1a1", marginTop: 16 }}>
-            Computer Science Student
+          <div style={{ display: "flex", flexDirection: "column", marginTop: 16 }}>
+            <div style={{ fontSize: 40, color: "#a1a1a1", lineHeight: 1.2 }}>
+              {site.tagline.field}
+            </div>
+            <div style={{ fontSize: 40, color: "#a1a1a1", lineHeight: 1.2 }}>
+              {site.tagline.role}
+            </div>
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#a1a1a1" }}>
