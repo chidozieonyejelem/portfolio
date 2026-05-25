@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Uses — Chidozie Onyejelem",
+  title: "Uses · Chidozie Onyejelem",
   description: "The tools, hardware, and software I use day to day.",
 };
 

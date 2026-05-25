@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/content";
 
-export const alt = "Chidozie Onyejelem — Software Engineer";
+export const alt = "Chidozie Onyejelem Portfolio";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
             {site.fullName}
           </div>
           <div style={{ fontSize: 40, color: "#a1a1a1", marginTop: 16 }}>
-            Software Engineer
+            Computer Science Student
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#a1a1a1" }}>

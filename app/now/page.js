@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Now — Chidozie Onyejelem",
+  title: "Now · Chidozie Onyejelem",
   description: "What I am focused on right now.",
 };
 
@@ -11,7 +11,7 @@ export default function NowPage() {
       </h1>
       <p className="mt-6 max-w-[460px] text-[15px] leading-[1.6] text-[#525252]">
         Currently focused on building useful products and exploring engineering opportunities in
-        Dublin. Placeholder content — check back soon.
+        Dublin. Placeholder content, check back soon.
       </p>
       <p className="mt-6 font-mono text-[11px] text-[#737373]">Last updated: 2026-05-25</p>
     </main>
