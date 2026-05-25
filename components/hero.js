@@ -1,31 +1,31 @@
 import Image from "next/image";
 import { PillLink } from "@/components/pill-link";
-import { StatusPill } from "@/components/status-pill";
 import { site, socialLinks } from "@/lib/content";
 
 export function Hero() {
   return (
     <section id="top" className="pb-[clamp(48px,8vw,96px)] pt-[clamp(64px,10vw,120px)]">
-      <div className="h-20 w-20 overflow-hidden rounded-full bg-[#f5f5f5]">
+      <div className="aspect-square w-[clamp(220px,55vw,600px)] overflow-hidden rounded-full bg-[#f5f5f5]">
         <Image
           src="/avatar.jpg"
           alt={site.fullName}
-          width={80}
-          height={80}
+          width={600}
+          height={600}
           priority
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="mt-6">
-        <StatusPill />
+      <div className="mt-10">
+        <h1 className="text-[clamp(40px,8vw,72px)] font-medium leading-[0.95] tracking-[-0.04em] text-black">
+          {site.tagline.name}
+        </h1>
+        <p className="mt-2 text-[clamp(26px,5vw,46px)] font-medium leading-[1.05] tracking-[-0.03em] text-black">
+          {site.tagline.field}
+        </p>
+        <p className="mt-1 text-[clamp(18px,3.6vw,30px)] font-normal leading-[1.15] tracking-[-0.02em] text-[#525252]">
+          {site.tagline.role}
+        </p>
       </div>
-      <h1 className="mt-8 text-[clamp(40px,8vw,72px)] font-medium leading-[0.95] tracking-[-0.04em] text-black">
-        {site.tagline.line1}
-        <br />
-        <span className="font-normal italic text-[#737373]">{site.tagline.italicLine}</span>
-        <br />
-        {site.tagline.line3}
-      </h1>
       <p className="mt-6 max-w-[460px] text-[15px] leading-[1.6] text-[#525252]">{site.bio}</p>
       <div className="mt-10 flex flex-wrap gap-1">
         {socialLinks.map((link) => (
