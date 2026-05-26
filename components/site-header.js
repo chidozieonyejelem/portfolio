@@ -12,26 +12,33 @@ const navLinks = [
   { label: "contact", href: "#top", section: null },
 ];
 
+const sectionIds = navLinks.map((link) => link.section).filter(Boolean);
+
 export function SiteHeader() {
   const [active, setActive] = useState("");
 
   useEffect(() => {
-    const sections = navLinks
-      .map((link) => link.section && document.getElementById(link.section))
-      .filter(Boolean);
-    if (sections.length === 0) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      // a thin band across the middle of the viewport: whichever section
-      // crosses it is the "current" one.
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const onScroll = () => {
+      const line = 110; // header height + buffer
+      let current = "";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) current = id;
+      }
+      // when scrolled to the very bottom, force the last section active
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        current = sectionIds[sectionIds.length - 1];
+      }
+      setActive(current);
+    };
+    const raf = requestAnimationFrame(onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (

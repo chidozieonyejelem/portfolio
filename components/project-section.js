@@ -15,6 +15,8 @@ export function ProjectSection({ id, label, items }) {
             year={item.year}
             href={item.href}
             external={item.external}
+            image={item.image}
+            preview={item.preview}
           />
         ))}
       </div>
