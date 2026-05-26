@@ -31,7 +31,7 @@ export function Hero() {
         </p>
       </div>
       <p className="mt-6 max-w-[460px] text-[15px] leading-[1.6] text-[#525252]">{site.bio}</p>
-      <div className="mt-10 flex flex-wrap justify-center gap-1">
+      <div id="contact" className="mt-10 flex flex-wrap justify-center gap-1">
         {socialLinks.map((link) =>
           link.href.startsWith("mailto:") ? (
             <EmailPill

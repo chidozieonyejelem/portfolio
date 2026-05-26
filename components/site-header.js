@@ -9,25 +9,26 @@ const navLinks = [
   { label: "projects", href: "#projects", section: "projects" },
   { label: "stack", href: "#stack", section: "stack" },
   { label: "certs", href: "#certificates", section: "certificates" },
-  { label: "contact", href: "#top", section: null },
+  { label: "contact", href: "#contact", section: "contact" },
 ];
 
-const sectionIds = navLinks.map((link) => link.section).filter(Boolean);
+// In top-to-bottom page order (contact = the hero's links block, near the top).
+const sectionOrder = ["contact", "about", "experience", "projects", "stack", "certificates"];
 
 export function SiteHeader() {
   const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => {
-      const line = 110; // header height + buffer
+      const line = window.innerHeight * 0.4; // ~40% down the viewport
       let current = "";
-      for (const id of sectionIds) {
+      for (const id of sectionOrder) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= line) current = id;
       }
-      // when scrolled to the very bottom, force the last section active
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
-        current = sectionIds[sectionIds.length - 1];
+      // at the very bottom, the last section wins (it may be too short to reach the line)
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        current = sectionOrder[sectionOrder.length - 1];
       }
       setActive(current);
     };
