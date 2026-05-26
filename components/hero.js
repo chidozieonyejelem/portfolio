@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="flex flex-col items-center pb-[clamp(24px,4vw,48px)] pt-[clamp(64px,10vw,120px)] text-center"
+      className="flex flex-col items-center pb-[clamp(24px,4vw,48px)] pt-[clamp(32px,5vw,60px)] text-center"
     >
       <div className="aspect-square w-[clamp(220px,55vw,500px)] overflow-hidden rounded-full bg-[#f5f5f5]">
         <Image
