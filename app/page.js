@@ -1,8 +1,8 @@
 import { Hero } from "@/components/hero";
+import { AboutSection } from "@/components/about-section";
 import { ProjectSection } from "@/components/project-section";
 import { TechStack } from "@/components/tech-stack";
-import { AboutSection } from "@/components/about-section";
-import { personalProjects, experience } from "@/lib/content";
+import { personalProjects, experience, certificates } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
       <ProjectSection id="experience" label="Experience" items={experience} />
       <ProjectSection id="projects" label="Personal Projects" items={personalProjects} />
       <TechStack />
+      <ProjectSection id="certificates" label="Certificates" items={certificates} />
     </main>
   );
 }

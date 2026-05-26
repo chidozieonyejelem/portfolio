@@ -3,7 +3,7 @@ import { WorkRow } from "@/components/work-row";
 
 export function ProjectSection({ id, label, items }) {
   return (
-    <section id={id} className="py-[clamp(48px,8vw,96px)]">
+    <section id={id} className="reveal py-[clamp(48px,8vw,96px)]">
       <SectionHeader label={label} />
       <div className="border-b-[0.5px] border-[#e5e5e5]">
         {items.map((item) => (

@@ -11,7 +11,7 @@ export function WorkRow({ num, title, description, year, href, external = false 
             <ArrowUpRight className="h-3.5 w-3.5 text-[#737373]" aria-hidden="true" />
           ) : null}
         </h3>
-        <p className="mt-1 text-[13px] text-[#737373]">{description}</p>
+        {description ? <p className="mt-1 text-[13px] text-[#737373]">{description}</p> : null}
       </div>
       <span className="text-right font-mono text-[11px] text-[#737373]">{year}</span>
     </div>
