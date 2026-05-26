@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PillLink } from "@/components/pill-link";
+import { EmailPill } from "@/components/email-pill";
 import { site, socialLinks } from "@/lib/content";
 
 export function Hero() {
@@ -31,14 +32,22 @@ export function Hero() {
       </div>
       <p className="mt-6 max-w-[460px] text-[15px] leading-[1.6] text-[#525252]">{site.bio}</p>
       <div className="mt-10 flex flex-wrap justify-center gap-1">
-        {socialLinks.map((link) => (
-          <PillLink
-            key={link.label}
-            label={link.label}
-            href={link.href}
-            external={link.external}
-          />
-        ))}
+        {socialLinks.map((link) =>
+          link.href.startsWith("mailto:") ? (
+            <EmailPill
+              key={link.label}
+              label={link.label}
+              email={link.href.replace("mailto:", "")}
+            />
+          ) : (
+            <PillLink
+              key={link.label}
+              label={link.label}
+              href={link.href}
+              external={link.external}
+            />
+          )
+        )}
       </div>
     </section>
   );
