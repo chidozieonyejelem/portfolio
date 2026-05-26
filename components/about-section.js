@@ -6,7 +6,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="flex flex-col items-center pb-[clamp(48px,8vw,96px)] pt-[clamp(16px,4vw,48px)] text-center"
+      className="flex flex-col items-center pb-[clamp(48px,8vw,96px)] pt-[clamp(8px,2vw,24px)] text-center"
     >
       <SectionHeader label="About" />
       <p className="max-w-[560px] text-[15px] leading-[1.6] text-[#525252]">{site.longBio}</p>
