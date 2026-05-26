@@ -44,6 +44,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="flex min-h-screen flex-col bg-white font-sans text-black antialiased">
+        <noscript>
+          {/* If JS is off, reveal wrappers (which start hidden) are forced visible. */}
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <SiteHeader />
         {children}
         <SiteFooter />

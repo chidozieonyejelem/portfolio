@@ -29,28 +29,3 @@ body {
   outline: 2px solid #000000;
   outline-offset: 2px;
 }
-
-/* Subtle entrance fade as sections scroll into view.
-   Progressive enhancement: only runs where scroll-driven animations are
-   supported (Chromium) and motion is not reduced; everyone else sees the
-   content normally. */
-@keyframes reveal-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    .reveal {
-      animation: reveal-in linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 45%;
-    }
-  }
-}

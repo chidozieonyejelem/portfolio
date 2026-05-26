@@ -3,7 +3,7 @@ import { techStack } from "@/lib/content";
 
 export function TechStack() {
   return (
-    <section id="stack" className="reveal py-[clamp(48px,8vw,96px)]">
+    <section id="stack" className="py-[clamp(48px,8vw,96px)]">
       <SectionHeader label="Tech Stack" />
       <div className="border-t-[0.5px] border-[#e5e5e5]">
         {techStack.map((group) => (
