@@ -6,7 +6,7 @@ const navLinks = [
   { label: "projects", href: "#projects" },
   { label: "stack", href: "#stack" },
   { label: "certs", href: "#certificates" },
-  { label: "contact", href: "#contact" },
+  { label: "contact", href: "#top" },
 ];
 
 export function SiteHeader() {
