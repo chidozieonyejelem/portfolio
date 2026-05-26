@@ -5,13 +5,15 @@ export function WorkRow({ num, title, description, year, href, external = false,
   const content = (
     <div className="grid grid-cols-[auto_1fr_auto] items-start gap-5 border-t-[0.5px] border-[#e5e5e5] py-[18px] [transition:padding-left_0.25s_ease] group-hover:pl-2">
       {image ? (
-        <Image
-          src={image}
-          alt=""
-          width={56}
-          height={56}
-          className="h-14 w-14 shrink-0 rounded-md border-[0.5px] border-[#e5e5e5] object-cover"
-        />
+        <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md border-[0.5px] border-[#e5e5e5] bg-white p-1.5">
+          <Image
+            src={image}
+            alt=""
+            width={48}
+            height={48}
+            className="h-full w-full object-contain"
+          />
+        </span>
       ) : (
         <span className="font-mono text-[11px] text-[#737373]">{num}</span>
       )}
