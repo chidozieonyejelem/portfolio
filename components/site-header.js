@@ -5,7 +5,7 @@ const navLinks = [
   { label: "experience", href: "#experience" },
   { label: "projects", href: "#projects" },
   { label: "stack", href: "#stack" },
-  { label: "certs", href: "#certificates" },
+  { label: "certs", href: "#achievements" },
 ];
 
 export function SiteHeader() {

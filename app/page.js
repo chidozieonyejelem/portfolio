@@ -3,7 +3,7 @@ import { Reveal } from "@/components/reveal";
 import { AboutSection } from "@/components/about-section";
 import { ProjectSection } from "@/components/project-section";
 import { TechStack } from "@/components/tech-stack";
-import { personalProjects, experience, certificates } from "@/lib/content";
+import { personalProjects, experience, achievements, certificates } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -22,11 +22,10 @@ export default function Home() {
         <TechStack />
       </Reveal>
       <Reveal>
-        <ProjectSection
-          id="certificates"
-          label="Achievements and Certificates"
-          items={certificates}
-        />
+        <ProjectSection id="achievements" label="Achievements" items={achievements} />
+      </Reveal>
+      <Reveal>
+        <ProjectSection id="certificates" label="Certificates" items={certificates} />
       </Reveal>
     </main>
   );
