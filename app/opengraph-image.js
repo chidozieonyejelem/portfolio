@@ -53,7 +53,7 @@ export default function OpengraphImage() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#a1a1a1" }}>
-          chidozieportfolio.vercel.app
+          chidozieonyejelem.com
         </div>
       </div>
     ),
